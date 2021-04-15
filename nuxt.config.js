@@ -107,8 +107,8 @@ export default {
   build: {
     transpile: [/^element-ui/],
   },
-  // generate: {
-  //   dir: 'output',
-  //   subFolders:false
-  // }
+  generate: {
+    dir: 'docs', // 这里由于github固定使用docs这个文件
+    subFolders: false
+  }
 }
