@@ -1,0 +1,39 @@
+{
+  "name": "homeNuxt",
+  "version": "1.0.0",
+  "private": true,
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "scripts": {
+    "tips": "devtest方式不使用nuxt自带提供的服务启动方式 配套文件erver/index.js nodemon babel全家 暂用nuxt自带方式 取消es2020新写法 可选链及import 之后再搞",
+    "dev": "nuxt",
+    "devtest": "cross-env NODE_ENV=development nodemon server/index.js --watch server --exec babel-node",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/router": "^1.5.0",
+    "axios": "^0.20.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "consola": "^2.15.3",
+    "element-ui": "^2.13.2",
+    "koa": "^2.13.1",
+    "nuxt": "^2.14.0",
+    "three": "^0.127.0",
+    "vue-video-player": "^5.0.2",
+    "vue-waterfall-lazyload": "^1.1.2"
+  },
+  "devDependencies": {
+    "@vue/eslint-config-standard": "^5.1.2",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.1.1",
+    "scss-loader": "0.0.1"
+  }
+}
