@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { authorRecommend, bangumi, userInfo } from '@/api/bilibili.js'
+// import { authorRecommend, bangumi, userInfo } from '@/api/bilibili.js'
 import gitCalendar from '@/assets/images/pic/gitCalendar.jpg'
 import sheep from '@/assets/images/source/sheep.png'
 import cloud from '@/assets/images/source/cloud.png'
@@ -67,10 +67,10 @@ export default {
   computed: {
   },
   created() {
-    let aid = 'BV19K411c7uo'
-    authorRecommend(aid).then((res) => {
-      console.log(res);
-    })
+    // let aid = 'BV19K411c7uo'
+    // authorRecommend(aid).then((res) => {
+    //   console.log(res);
+    // })
   }
 }
 </script>
