@@ -33,11 +33,11 @@ export default {
       },
       {
         name: 'Author',
-        content: ''
+        content: 'zhangtianyang'
       },
       {
         name: 'Keywords',
-        content: ''
+        content: '前端 个人 张天阳 '
       },
       {
         name: 'Description',
@@ -109,6 +109,7 @@ export default {
   },
   generate: {
     dir: 'docs', // 这里由于github固定使用docs这个文件
+    fallback: 'index.html',
     subFolders: false
   }
 }
