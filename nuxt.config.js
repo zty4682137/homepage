@@ -48,6 +48,10 @@ export default {
         content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes'
       },
       {
+        name: 'baidu-site-verification',
+        content: 'B2IiL7rj1k'
+      },
+      {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''

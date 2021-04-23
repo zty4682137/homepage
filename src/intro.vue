@@ -167,19 +167,6 @@ export default {
     overflow: hidden;
     box-sizing: border-box;
   }
-  .loadImg {
-    width: 10rem;
-    height: 10rem;
-    background: url("./assets/images/avatar.jpg") no-repeat center top;
-    background-size: cover;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    animation: loading-Img 2s infinite;
-  }
   .alert {
     display: none;
   }
@@ -197,17 +184,6 @@ export default {
   }
   .load {
     display: none;
-  }
-  .alert {
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background: url("./assets/images/avatar.jpg") no-repeat center top;
-    background-size: cover;
-    text-align: center;
   }
   .alertImg {
     margin-top: 6rem;

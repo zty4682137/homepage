@@ -30,9 +30,8 @@
 
 <script>
 import gitCalendar from '@/assets/images/pic/gitCalendar.jpg'
-import sheep from '@/assets/images/sheep.png'
-import cloud from '@/assets/images/cloud.png'
-import IDcard from '@/assets/images/IDcard.png'
+import sheep from '@/assets/images/source/sheep.png'
+import cloud from '@/assets/images/source/cloud.png'
 import test1 from '@/assets/images/pic/test1.jpg'
 import test2 from '@/assets/images/pic/test2.jpg'
 import test3 from '@/assets/images/pic/test3.jpg'

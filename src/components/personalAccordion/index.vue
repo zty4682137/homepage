@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import avatar from '@/assets/images/avatar.jpg'
+import avatar from '@/assets/images/avatar/avatar.jpg'
 
 export default {
   data() {

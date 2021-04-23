@@ -104,8 +104,8 @@
 </template>
 
 <script>
-import avatar1 from '@/assets/images/zty.jpg'
-import avatar from '@/assets/images/avatar.jpg'
+import avatar1 from '@/assets/images/avatar/zty.jpg'
+import avatar from '@/assets/images/avatar/avatar.jpg'
 // import CVdoc from '@/assets/CV/张天阳的简历.doc'
 // import CVpdf from '@/assets/CV/张天阳的简历.pdf'
 export default {
