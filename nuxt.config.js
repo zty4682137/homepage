@@ -82,10 +82,6 @@ export default {
     {
       src: '@/plugins/toolBox',
       ssr: false
-    },
-    {
-      src: '@/plugins/vue-waterfall',
-      ssr: false
     }
     // 'vue-video-player'
   ],

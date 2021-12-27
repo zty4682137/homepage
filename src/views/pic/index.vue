@@ -12,14 +12,6 @@
       相册
     </h1>
     <div class="picCtn">
-      <!-- <waterfall>
-      <waterfallSilde v-for="(item, index) in dataList" :key="index">
-        <img :src="item.src" alt="" />
-      </waterfallSilde>
-    </waterfall> -->
-      <!-- <client-only>
-      <LazyWaterfall />
-    </client-only> -->
       <div v-for="(item, index) in dataList" :key="index" class="picCard">
         <img :src="item.src" alt="" />
         <p>{{ item.name }}</p>
@@ -30,39 +22,39 @@
 
 <script>
 // import { authorRecommend, bangumi, userInfo } from '@/api/bilibili.js'
-import gitCalendar from '@/assets/images/pic/gitCalendar.jpg'
-import sheep from '@/assets/images/source/sheep.png'
-import cloud from '@/assets/images/source/cloud.png'
-import test1 from '@/assets/images/pic/test1.jpg'
-import test2 from '@/assets/images/pic/test2.jpg'
-import test3 from '@/assets/images/pic/test3.jpg'
-import test4 from '@/assets/images/pic/test4.gif'
-import test5 from '@/assets/images/pic/test5.jpg'
-import test6 from '@/assets/images/pic/test6.jpg'
-import test7 from '@/assets/images/pic/test7.jpg'
-import cat1 from '@/assets/images/pic/cat1.jpg'
-import cat2 from '@/assets/images/pic/cat2.jpg'
 export default {
   name: 'pic',
   data() {
     return {
-      dataList: [
-        { name: 'git工作记录', src: gitCalendar },
-        { name: '羊', src: sheep },
-        { name: 'cloud', src: cloud },
-        { name: 'test1', src: test1 },
-        { name: 'test2', src: test2 },
-        { name: 'test3', src: test3 },
-        { name: 'test4', src: test4 },
-        { name: 'test5', src: test5 },
-        { name: 'test6', src: test6 },
-        { name: 'test7', src: test7 },
-        { name: 'cat1', src: cat1 },
-        { name: 'cat2', src: cat2 },
-      ]
+      dataList: [],
+      files: require.context('@/assets/images/pic/', false).keys().map((item => item.replace('./', ''))),
+      page: 1,
+      pageSize: 5
     }
   },
   methods: {
+    loadmore() {
+      //使用require方法写dir时不能使用变量替代
+      const tempArr = this.files.slice((this.page - 1) * this.pageSize, this.page * this.pageSize)
+      if (tempArr.length == 0) {
+        return
+      }
+      for (let i = 0; i < tempArr.length; i++) {
+        const element = tempArr[i];
+        this.dataList.push({ name: element, src: require('@/assets/images/pic/' + element) })
+      }
+      this.page += 1
+    },
+    scrollHandle() {
+      const container = document.querySelector('html')
+      const viewH = container.clientHeight//可见高度
+      const contentH = container.offsetHeight//内容高度
+      const scrollTop = container.scrollTop;//滚动高度
+      // console.log(viewH, contentH, scrollTop)
+      if (contentH - viewH - scrollTop <= 100) { //当滚动到距离底部100px时,
+        this.loadmore()
+      }
+    },
   },
   computed: {
   },
@@ -71,6 +63,10 @@ export default {
     // authorRecommend(aid).then((res) => {
     //   console.log(res);
     // })
+    this.loadmore()
+  },
+  mounted() {
+    window.onscroll = this.$debounce(this.scrollHandle, 300)
   }
 }
 </script>

@@ -28,11 +28,9 @@
           <h2 class="introAnch1" style="margin: 40px auto 20px">个人信息</h2>
           <div class="splitLine"></div>
           <p>
-            Job：{{ personalInfo.job }} {{ workedTime }}年
-            <br />
-            Phone：{{ personalInfo.phone }} &nbsp;&nbsp;&nbsp; Email：{{
-              personalInfo.mail
-            }}
+            {{ personalInfo.job }} {{ workedTime }}年 &nbsp;&nbsp;&nbsp;
+            {{ personalInfo.phone }} &nbsp;&nbsp;&nbsp;
+            {{ personalInfo.mail }}
           </p>
           <h2 class="introAnch1" style="margin: 40px auto 20px">工作经验</h2>
           <div class="splitLine"></div>

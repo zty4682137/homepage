@@ -19,8 +19,6 @@ const initStore = () => {
       currentVideo: '',
       // 当前视频列表
       videoList: [],
-      // 全局登录弹窗显示隐藏
-      showLoginBox: false
     },
     mutations: {
       SET_TOKEN(state, params) {

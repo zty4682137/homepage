@@ -11,7 +11,7 @@
           class="nav-item"
           :class="{ active: $route.name === 'info' }"
           :to="{ name: 'info' }"
-          >个人信息</router-link
+          >Info</router-link
         >
         <router-link
           class="nav-item"

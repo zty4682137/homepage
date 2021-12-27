@@ -1,10 +1,10 @@
 import Vue from 'vue'
 // public
-// import loginBox from './loginBox'
 import svgIcon from './svgIcon'
 import pageHeader from './header'
 import elevator from './elevator'
 import h2Title from './h2Title'
+import waterfall from './waterfall'
 // intro
 import personalAccordion from './personalAccordion'
 // work
@@ -19,3 +19,4 @@ Vue.component('pageHeader', pageHeader)
 Vue.component('personalAccordion', personalAccordion)
 Vue.component('workFilter', workFilter)
 Vue.component('workCard', workCard)
+Vue.component('waterfall', waterfall)
