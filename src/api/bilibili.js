@@ -3,7 +3,7 @@ import request from '@/utils/request'
 // 获取推荐
 export function authorRecommend(aid) {
   return request({
-    url: 'author_recommend',
+    url: '/bilibili/author_recommend',
     method: 'get',
     params: {
       aid: aid
@@ -13,7 +13,7 @@ export function authorRecommend(aid) {
 // get番剧列表
 export function bangumi(btype, weekday) {
   return request({
-    url: 'bangumi',
+    url: '/bilibili/bangumi',
     method: 'get',
     params: {
       btype: btype,
@@ -24,7 +24,7 @@ export function bangumi(btype, weekday) {
 // 读取用户动态信息   https://www.bilibili.com/read/cv7914570/
 export function userInfo(include_types, exclude_types, page, pagesize) {
   return request({
-    url: 'dynamic',
+    url: '/bilibili/dynamic',
     method: 'get',
     params: {
       btype: btype,

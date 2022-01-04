@@ -3,10 +3,9 @@
     id="personalCardContainer"
     :style="'background:' + themeList[0][0] + ';'"
   >
-    <!-- <img class="arrow left" src="@/assets/images/source/arrow.png" alt="" /> -->
     <img
-      v-if="firstFlag"
-      class="arrow right"
+      v-show="firstFlag"
+      class="arrow"
       src="@/assets/images/source/arrow.png"
     />
     <div id="bg">
@@ -73,7 +72,7 @@ export default {
     this.vector = new this.$Vector("personalCardContainer", "personalCardContainer");
     let dom = document.querySelector('#personalCardContainer>canvas')
     // 在一个生命周期钩子内 js按顺序执行
-    this.clickHandle(0)
+    // this.clickHandle(0)
     // console.log(dom);
     // if (dom) {
     //   dom.style.opacity = 1
@@ -107,19 +106,17 @@ export default {
   color: #fff;
   .arrow {
     position: absolute;
-    animation: leftArrow 8s infinite;
+    // animation: leftArrow 8s infinite;
     top: 0;
     bottom: 0;
     margin: auto;
     height: 40px;
+    right: 20px;
     // &.left {
     //   left: 20px;
     //   transform-origin: 50% 50%;
     //   transform: rotate(180deg);
     // }
-    &.right {
-      right: 20px;
-    }
   }
   #bg {
     height: 100%;

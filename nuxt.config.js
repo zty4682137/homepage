@@ -74,9 +74,12 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
+  //在ssr中@nuxt/axios和axios不共通 只能使用其中一种来做proxy
   plugins: [
     '@/plugins/element',
     '@/plugins/vueVideoPlayer',
+    '@/plugins/api',
+    // '@/plugins/request',
     // '@/plugins/floatBall',
     '@/components/globalComponents',
     {
@@ -99,7 +102,32 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['@nuxtjs/axios', '@nuxtjs/proxy', '@nuxtjs/dotenv'], //dotenv从文件加载到环境变量
+  axios: {
+    proxy: true, // 表示开启代理
+    prefix: '/', // 表示给请求url加个前缀 /api
+    credentials: true // 表示跨域请求时是否需要使用凭证
+  },
+  proxy: {
+    // '/': {
+    //   target: 'http://192.168.1.3:8090', // 目标接口域名
+    //   changeOrigin: false, // 表示是否跨域
+    // },
+    // 'api.bilibili.cn/': {
+    //   target: 'http://api.bilibili.cn', // 目标接口域名
+    //   changeOrigin: true, // 表示是否跨域
+    //   // pathRewrite: {
+    //   //   // '^/bilibili': '/', // 把 /api 替换成 /
+    //   // }
+    // },
+    // '/bilibili': {
+    //   target: 'http://api.bilibili.cn', // 目标接口域名
+    //   changeOrigin: true, // 表示是否跨域
+    //   pathRewrite: {
+    //     '^/bilibili': '/', // 把 /api 替换成 /
+    //   }
+    // }
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/

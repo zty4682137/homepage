@@ -14,6 +14,7 @@
     <workFilter v-model="category" />
     <div id="otherwork">
       <div class="workCtn">
+        {{ files }}
         <workCard v-for="(item, index) in showList" :key="index" :data="item" />
       </div>
     </div>
@@ -21,7 +22,6 @@
 </template>
 
 <script>
-// 做分类 （代码/视频）（二级细化 后台管理/展示页）
 // import banana from '@/assets/images/work_img/work_banana.png'
 import work_banana from '@/static/mypro/banana/work_banana.png'
 import work_2048 from '@/static/mypro/2048/work_2048.png'
@@ -41,37 +41,36 @@ export default {
   components: {
   },
   data() {
-    // 写到这里!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    // 继续整理work页面
-    // 提出card组件
+    // 引入bili api request.context遍历引入 更改html入口index
     // 引用vue video 尝试视频展示 
-    // 引用fs去做static文件夹里的资源引用和遍历(暂无法实现)
+    // 做分类 （代码/视频/画）（二级细化 后台管理/展示页）
+    // 此页面无法用require做循环引入 这里的资源放在static文件夹
     return {
       category: ['all', 'all'],
       dataList: [
         {
           title: 'BANANA!!!!!',
-          detail: '全部用html/css渐变、倒角、阴影构成，HTML真！好！玩！',
+          detail: '全部用html/css渐变、倒角、阴影构成',
           src: work_banana,
           type: 'code',
           tag: ['css', 'html'],
-          href: '/mypro/banana/banana.html'//在static中的项目会放在根目录中 https://zh.nuxtjs.org/docs/2.x/directory-structure/static
+          href: '/mypro/banana/index.html'//在static中的项目会放在根目录中 https://zh.nuxtjs.org/docs/2.x/directory-structure/static
         },
         {
           title: '2048',
-          detail: '2048小游戏',
+          detail: '2048小游戏 方向键控制',
           src: work_2048,
           type: 'code',
           tag: ['css', 'html', 'js'],
-          href: '/mypro/2048/2048.html'
+          href: '/mypro/2048/index.html'
         },
         {
           title: 'canvs小地球',
-          detail: 'canvs小地球',
+          detail: 'canvs小地球 基于svg绘图',
           src: work_sunAndEarth,
           type: 'code',
           tag: ['svg'],
-          href: '/mypro/canvasSunEarth/twotest1.html'
+          href: '/mypro/canvasSunEarth/index.html'
         },
         {
           title: 'CUBE',
@@ -79,7 +78,7 @@ export default {
           src: work_cube,
           type: 'code',
           tag: ['css', 'html'],
-          href: '/mypro/cube/cube.html'
+          href: '/mypro/cube/index.html'
         },
         {
           title: '扫雷',
@@ -95,16 +94,16 @@ export default {
           src: work_3dcontrol,
           type: 'code',
           tag: ['canvas', 'js'],
-          href: '/mypro/threeTest/shubiaokongzhi.html'
+          href: '/mypro/threeTest/index.html'
         },
-        {
-          title: '光环绕',
-          detail: '基于three.js的光源移动渲染',
-          src: work_halo,
-          type: 'code',
-          tag: ['canvas', 'js'],
-          href: '/mypro/threeTest/cameraRotate.html'
-        },
+        // {
+        //   title: '光环绕',
+        //   detail: '基于three.js的光源移动渲染',
+        //   src: work_halo,
+        //   type: 'code',
+        //   tag: ['canvas', 'js'],
+        //   href: '/mypro/threeTest/index.html'
+        // },
       ],
       showList: []
     }
